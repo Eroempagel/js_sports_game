@@ -10,9 +10,21 @@
 // 2. Use what you know about HTML and CSS to make the page look better!
 // 3. Upon reset, display who won the game.
 
-// let us click the reset button to reset the page
+// Let's handle the reset button
+const resetContainer = document.querySelector("#reset-container");
+const resetBtn = document.querySelector("#reset-button");
+const resetCount = document.querySelector("#num-resets");
 
-//display.reset;
+resetBtn.addEventListener("click", function () {
+  console.log("the reset button had been clicked");
+  let newCounterValue = Number(resetCount.innerHTML) + 1;
+  resetCount.innerHTML = newCounterValue;
+  // simulate reset
+  teamOneNumshots.innerHTML = 0;
+  teamOneGoals.innerHTML = 0;
+  teamTwoNumshots.innerHTML = 0;
+  teamTwoGoals.innerHTML = 0;
+});
 
 // let's click the shoot buttons for either team one or two
 // then let us increment the total number of shots taken
@@ -20,7 +32,6 @@
 // then run a random number generator
 // if the random number is even that team scores a goal
 
-//let teamoneNumshots = 0;
 const teamOneNumshots = document.querySelector("#teamone-numshots");
 const teamOneShootButton = document.querySelector("#teamone-shoot-button");
 const teamOneGoals = document.querySelector("#teamone-numgoals");
@@ -28,8 +39,7 @@ teamOneShootButton.addEventListener("click", function () {
   console.log("teamone's shoot button clicked");
   let newCounterValue = Number(teamOneNumshots.innerHTML) + 1;
   teamOneNumshots.innerHTML = newCounterValue;
-  // returns a random integer from 0 to 9
-  // Math.floor(Math.random() * 10);
+  // returns a random integer
   // if it is even, teamone scores a goal
   if (Math.floor(Math.random() * (10 - 0) + 1) % 2 == 0) {
     let newGoalValue = Number(teamOneGoals.innerHTML) + 1;
@@ -37,7 +47,6 @@ teamOneShootButton.addEventListener("click", function () {
   }
 });
 
-//let teamTwoNumshots = 0;
 const teamTwoNumshots = document.querySelector("#teamtwo-numshots");
 const teamTwoShootButton = document.querySelector("#teamtwo-shoot-button");
 const teamTwoGoals = document.querySelector("#teamtwo-numgoals");
@@ -45,8 +54,7 @@ teamTwoShootButton.addEventListener("click", function () {
   console.log("teamtwo's shoot button clicked");
   let newCounterValue = Number(teamTwoNumshots.innerHTML) + 1;
   teamTwoNumshots.innerHTML = newCounterValue;
-  // returns a random integer from 0 to 9
-  // Math.floor(Math.random() * 10);
+  // returns a random integer
   // if it is even, teamtwo scores a goal
   if (Math.floor(Math.random() * (10 - 0) + 1) % 2 == 0) {
     let newGoalValue = Number(teamTwoGoals.innerHTML) + 1;
