@@ -2,10 +2,20 @@
   display: none;
 }
 .left {
-  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 150px;
 }
 .right {
-  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  width: 150px;
 }
 .clear {
   clear: both;
@@ -13,4 +23,27 @@
 #reset-container,
 h1 {
   text-align: center;
+}
+body {
+  width: 100%;
+}
+.cards {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.goron {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#teamone {
+  height: 180px;
+}
+#teamtwo {
+  height: 180px;
+}
+body {
+  background-color: beige;
 }

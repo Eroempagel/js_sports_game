@@ -34,6 +34,10 @@ mySound1 = new sound("assets/audio/arrow.mp3");
 let mySound2;
 mySound2 = new sound("assets/audio/arrow-wall.mp3");
 
+// sound of a win
+let mySound3;
+mySound3 = new sound("/assets/audio/win.wav");
+
 // sound handling function
 function sound(src) {
   this.sound = document.createElement("audio");
@@ -59,6 +63,15 @@ resetBtn.addEventListener("click", function () {
   console.log("the reset button had been clicked");
   let newCounterValue = Number(resetCount.innerHTML) + 1;
   resetCount.innerHTML = newCounterValue;
+
+  if (teamOneGoals.innerHTML > teamTwoGoals.innerHTML) {
+    alert("Team One Wins!");
+    mySound3.play();
+  } else {
+    alert("Team Two wins!");
+    mySound3.play();
+  }
+
   // simulate reset
   teamOneNumshots.innerHTML = 0;
   teamOneGoals.innerHTML = 0;
