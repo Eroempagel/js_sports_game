@@ -64,11 +64,16 @@ resetBtn.addEventListener("click", function () {
   let newCounterValue = Number(resetCount.innerHTML) + 1;
   resetCount.innerHTML = newCounterValue;
 
+  const teamOneGoals = document.querySelector("#teamone-numgoals");
+  const teamTwoGoals = document.querySelector("#teamtwo-numgoals");
   if (teamOneGoals.innerHTML > teamTwoGoals.innerHTML) {
     alert("Team One Wins!");
     mySound3.play();
+  } else if (teamTwoGoals.innerHTML > teamOneGoals.innerHTML) {
+    alert("Team Two Wins!");
+    mySound3.play();
   } else {
-    alert("Team Two wins!");
+    alert("It's a Tie!");
     mySound3.play();
   }
 
